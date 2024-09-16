@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <script src="https://kit.fontawesome.com/e05f21b32e.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <title>Number Guesser</title>
+</head>
+
+<body>
+    <div class="container number-guesser-container wrong" id="number_guesser_container">
+        <header>
+            <h2>Guess the number</h2>
+        </header>
+
+        <div class="container game-interaction-container" id="game_interaction_container">
+            <input type="text" class="input number_input" id="number_input" min="0" max="100" placeholder="Enter number between 0 and 100">
+            <button class="btn submit-guess-btn" id="submit_guess_btn">Submit Guess</button>
+
+            <h3>
+                Guess: <span class="guess-feedback" id="guess_feedback"></span>
+            </h3>
+        </div>
+
+        <div class="container game-end-container" id="game_end_container">
+            <h2>You guessed the correct number:</h2>
+            <span class="correct-number" id="correct_number"></span>
+        </div>
+
+        
+    </div>
+    <audio src="sounds/win.wav" id="win_sound"></audio>
+</body>
+
+</html>

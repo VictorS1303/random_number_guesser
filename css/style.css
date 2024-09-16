@@ -1,0 +1,139 @@
+.container.number-guesser-container
+{
+    position: relative;
+    display: grid;
+    place-content: center;
+    height: 400px;
+    width: 40vw;
+    color: var(--primary-text-color);
+    background-color: var(--container-background-color);
+    border-radius: var(--base-border-radius);
+    pointer-events: all;
+
+
+    
+    & header
+    {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+
+    .container.game-interaction-container
+    {
+        display: flex;
+        flex-direction: column;
+
+        & input
+        {
+            font-family: inherit;
+            color: var(--primary-text-color);
+            background-color: transparent;
+            width: 60%;
+            font-size: 1rem;
+            padding-bottom: 2px;
+            border-bottom: 2px solid var(--primary-text-color);
+            width: fit-content;
+        }
+
+        & button
+        {
+            font-family: inherit;
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: var(--primary-text-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-radius: calc(var(--base-border-radius) / 2);
+            background-color: var(--submit-guess-btn-background-color);
+            box-shadow: var(--box-shadow);
+            transition: opacity .15 ease-in;
+
+            &:hover
+            {
+                opacity: .95;
+                transition: opacity .15 ease-in;
+            }
+            
+            &:active
+            {
+                transform: scale(.98);
+            }
+        }
+
+    }
+
+    & .container.game-end-container
+    {
+        display: none;
+        text-align: center;
+
+        & span
+        {
+            font-size: 3rem;
+            margin-top: 25px;
+        }
+       
+    }
+
+     
+    & h3
+    {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+
+    &.wrong
+    {
+        background-color: red;
+        animation: shake 2s linear;
+    }
+
+    &.correct
+    {
+        background-color: limegreen;
+    }
+
+    &.disabled
+    {
+        pointer-events: none;
+    }
+}
+
+video
+{
+    position: absolute;
+    top: -100%;
+}
+
+@keyframes shake
+{
+    10%,
+    30%,
+    50%,
+    70%,
+    90%
+    {
+        transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80%
+    {
+        transform: translateX(5px);
+    }
+
+    100%
+    {
+        transform: translateX(0);
+    }
+}
